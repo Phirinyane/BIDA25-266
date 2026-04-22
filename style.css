@@ -334,3 +334,122 @@ footer::after {
   text-align: center;
   margin: 20px 0;
 }
+/* =========================
+   ABOUT PAGE STYLING
+========================= */
+
+.about-page main section:first-of-type {
+  background-color: #f8efef;
+  padding: 35px;
+  border-radius: 20px;
+}
+
+.about-page main section:first-of-type article {
+  display: inline-block;
+  width: 55%;
+  vertical-align: top;
+}
+
+.about-page main section:first-of-type figure {
+  display: inline-block;
+  width: 40%;
+  margin-left: 5%;
+  vertical-align: top;
+}
+
+.about-page main section:first-of-type figure img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+/* Mission + Goals */
+
+.about-page main section:nth-of-type(2) {
+  margin-top: 25px;
+}
+
+.about-page main section:nth-of-type(2) article {
+  display: inline-block;
+  width: 48%;
+  margin-right: 2%;
+  vertical-align: top;
+  min-height: 200px;
+}
+
+/* Wellness section */
+
+.about-page main section:nth-of-type(3) {
+  background-color: #ffffff;
+  border: 2px solid #ececec;
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 25px;
+}
+
+.about-page main section:nth-of-type(3) article {
+  display: inline-block;
+  width: 55%;
+  vertical-align: top;
+}
+
+.about-page main section:nth-of-type(3) figure {
+  display: inline-block;
+  width: 40%;
+  margin-left: 5%;
+  vertical-align: top;
+}
+
+.about-page main section:nth-of-type(3) figure img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Text polish */
+
+.about-page h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.about-page h3 {
+  color: #c00018;
+  margin-bottom: 10px;
+}
+
+.about-page p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* List styling */
+
+.about-page ul {
+  margin-left: 20px;
+}
+
+.about-page li {
+  margin-bottom: 8px;
+}
+
+/* Mobile fix */
+
+@media (max-width: 900px) {
+
+  .about-page main section:first-of-type article,
+  .about-page main section:first-of-type figure,
+  .about-page main section:nth-of-type(2) article,
+  .about-page main section:nth-of-type(3) article,
+  .about-page main section:nth-of-type(3) figure {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .about-page main section:first-of-type figure img,
+  .about-page main section:nth-of-type(3) figure img {
+    height: auto;
+  }
+}
