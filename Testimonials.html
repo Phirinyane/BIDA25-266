@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ParchD | Testimonials</title>
 </head>
-<body>
+<body class="testimonials-page">
 
   <header>
     <h1>ParchD</h1>
 
-    <nav>
+       <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html">Products</a>
-      <a href="shop.html">Shop</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact Us</a>
+      <a href="About.html">About Us</a>
+      <a href="Products.html">Products</a>
+      <a href="Shop.html">Shop</a>
+      <a href="Testimonials.html">Testimonials</a>
+      <a href="FAQ.html">FAQ</a>
+      <a href="Contact.html">Contact Us</a>
     </nav>
-
+    
     <p>Cart</p>
   </header>
 
@@ -57,6 +57,38 @@
     </section>
 
     <section>
+      <h3>Leave a Review</h3>
+
+      <form id="review-form">
+        <p>
+          <label for="customer-name">Name:</label><br>
+          <input type="text" id="customer-name" name="customer-name" required>
+        </p>
+
+        <p>
+          <label for="customer-rating">Rating:</label><br>
+          <select id="customer-rating" name="customer-rating" required>
+            <option value="">Select rating</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1">1 Star</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="customer-review">Review:</label><br>
+          <textarea id="customer-review" name="customer-review" rows="5" required></textarea>
+        </p>
+
+        <p>
+          <button type="submit">Submit Review</button>
+        </p>
+      </form> 
+    </section>
+
+    <section>
       <article>
         <h3>Thank you for trusting ParchD</h3>
         <p>We are proud to be part of your wellness journey.</p>
@@ -66,23 +98,15 @@
 
   <footer>
     <p>
-      <a href="https://facebook.com">Facebook</a>
-      <a href="https://instagram.com">Instagram</a>
+      <a href="https://www.facebook.com/share/1RYqaPEzoC/?mibextid=wwXIfr">Facebook</a>
+      <a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==">Instagram</a>
       <a href="https://wa.me/">WhatsApp</a>
     </p>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html">Products</a>
-      <a href="shop.html">Shop</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact Us</a>
-    </nav>
 
-    <p>&copy; 2024 ParchD. All rights reserved.</p>
+    <p>&copy; 2026 ParchD. All rights reserved.</p>
   </footer>
 
+<script src="testimonials.js"></script>
 </body>
 </html>
