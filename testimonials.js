@@ -62,11 +62,19 @@ function filterReviews(r) {
 function setRating(r) {
   selectedRating = r;
 
-  const starButtons = document.querySelectorAll(".star");
+  const starElements = document.querySelectorAll(".star");
 
-  starButtons.forEach((s, i) => {
-    s.textContent = i < r ? "★" : "☆";
+  starElements.forEach((star, index) => {
+    if (index < r) {
+      star.textContent = "★";
+    } else {
+      star.textContent = "☆";
+    }
   });
+
+  document.getElementById("rating-text").textContent =
+    "Selected: " + r + " stars";
+}
 
   const ratingText = document.getElementById("rating-text");
   if (ratingText) {
@@ -102,9 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       display();
 
-      this.reset();
-      setRating(0);
-    });
+     this.reset();
+selectedRating = 0;
+setRating(0);
   }
 
   display();
