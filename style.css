@@ -278,3 +278,59 @@ footer::after {
   display: block;
   clear: both;
 }
+/* TESTIMONIALS PAGE */
+
+.testimonials-page button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: 2px solid #c00018;
+  background: white;
+  color: #c00018;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.testimonials-page button:hover {
+  background: #c00018;
+  color: white;
+}
+
+.testimonials-page .star {
+  font-size: 1.8rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.testimonials-page article {
+  background: white;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+}
+
+.testimonials-page .rating {
+  color: #c00018;
+  font-size: 1.4rem;
+}
+
+.testimonials-page textarea,
+.testimonials-page input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.testimonials-page form {
+  background: #f8efef;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.rating-summary {
+  text-align: center;
+  margin: 20px 0;
+}
