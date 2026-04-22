@@ -6,13 +6,11 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>ParchD</h1>
     <p>🛒</p>
   </header>
 
-  <!-- Introduction -->
   <main>
     <section>
       <h2>Introduction</h2>
@@ -38,7 +36,6 @@
       </figure>
     </section>
 
-    <!-- Products -->
     <section id="products">
       <h2>Products</h2>
 
@@ -63,7 +60,7 @@
       </article>
     </section>
 
-    <!-- Product Benefits -->
+
     <section>
       <h2>Product Benefits</h2>
 
@@ -87,7 +84,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
+
   <footer>
     <section>
       <p>
