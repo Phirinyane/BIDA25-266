@@ -1,6 +1,19 @@
 let reviews = JSON.parse(localStorage.getItem("reviews")) || [
-  { name: "Botumelo", rating: 5, comment: "Amazing drink!" },
-  { name: "Kefilwe", rating: 4, comment: "Very tasty yoghurt." }
+  {
+    name: "Botumelo",
+    rating: 5,
+    comment: "ParchD hibiscus drink is so refreshing. I feel lighter and my digestion has improved."
+  },
+  {
+    name: "Kefilwe",
+    rating: 5,
+    comment: "The collagen yoghurt is my go-to. My skin is glowing and my gut feels amazing."
+  },
+  {
+    name: "Thato",
+    rating: 5,
+    comment: "I love that ParchD uses natural ingredients and actually cares about our wellness."
+  }
 ];
 
 let selectedRating = 0;
@@ -9,91 +22,123 @@ function saveReviews() {
   localStorage.setItem("reviews", JSON.stringify(reviews));
 }
 
-function stars(r) {
-  let s = "";
+function getStars(rating) {
+  let output = "";
   for (let i = 1; i <= 5; i++) {
-    s += i <= r ? "★" : "☆";
+    output += i <= rating ? "★" : "☆";
   }
-  return s;
+  return output;
 }
 
 function updateSummary() {
-  let avg = 0;
-  reviews.forEach(r => avg += r.rating);
-  avg = reviews.length ? (avg / reviews.length).toFixed(1) : 0;
+  const avgElement = document.getElementById("average-rating");
+  const countElement = document.getElementById("review-count");
 
-  const avgEl = document.getElementById("average-rating");
-  const countEl = document.getElementById("review-count");
+  if (!avgElement || !countElement) return;
 
-  if (avgEl) avgEl.textContent = avg + "/5";
-  if (countEl) countEl.textContent = reviews.length + " reviews";
+  if (reviews.length === 0) {
+    avgElement.textContent = "0.0/5";
+    countElement.textContent = "0 reviews";
+    return;
+  }
+
+  let total = 0;
+  reviews.forEach(function (review) {
+    total += review.rating;
+  });
+
+  const average = (total / reviews.length).toFixed(1);
+
+  avgElement.textContent = average + "/5";
+  countElement.textContent = reviews.length + " reviews";
 }
 
-function display(list = reviews) {
-  const box = document.getElementById("reviews-container");
-  if (!box) return;
+function displayReviews(list = reviews) {
+  const container = document.getElementById("reviews-container");
+  if (!container) return;
 
-  box.innerHTML = "";
+  container.innerHTML = "";
 
-  list.forEach(r => {
-    const el = document.createElement("article");
+  if (list.length === 0) {
+    container.innerHTML = "<article><p>No reviews found.</p></article>";
+    return;
+  }
 
-    el.innerHTML = `
-      <h3>${r.name}</h3>
-      <p class="rating">${stars(r.rating)}</p>
-      <p>${r.comment}</p>
+  list.forEach(function (review) {
+    const article = document.createElement("article");
+    article.innerHTML = `
+      <h3>${review.name}</h3>
+      <p class="rating">${getStars(review.rating)}</p>
+      <p>${review.comment}</p>
     `;
-
-    box.appendChild(el);
+    container.appendChild(article);
   });
 
   updateSummary();
 }
 
-function filterReviews(r) {
-  if (r === "all") {
-    display(reviews);
+function filterReviews(rating) {
+  if (rating === "all") {
+    displayReviews(reviews);
     return;
   }
 
-  display(reviews.filter(x => x.rating === r));
-}
-
-function setRating(r) {
-  selectedRating = r;
-
-  const starElements = document.querySelectorAll(".star");
-
-  starElements.forEach((star, index) => {
-    if (index < r) {
-      star.textContent = "★";
-    } else {
-      star.textContent = "☆";
-    }
+  const filtered = reviews.filter(function (review) {
+    return review.rating === rating;
   });
 
-  document.getElementById("rating-text").textContent =
-    "Selected: " + r + " stars";
+  displayReviews(filtered);
 }
+
+function paintSelectedStars(rating) {
+  const starButtons = document.querySelectorAll(".star");
+
+  starButtons.forEach(function (star, index) {
+    star.textContent = index < rating ? "★" : "☆";
+  });
 
   const ratingText = document.getElementById("rating-text");
   if (ratingText) {
-    ratingText.textContent = "Selected: " + r + " stars";
+    ratingText.textContent = "Selected: " + rating + " stars";
   }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  const starButtons = document.querySelectorAll(".star");
   const form = document.getElementById("review-form");
+
+  starButtons.forEach(function (star) {
+    const value = Number(star.dataset.value);
+
+    star.addEventListener("click", function () {
+      selectedRating = value;
+      paintSelectedStars(selectedRating);
+    });
+
+    star.addEventListener("mouseover", function () {
+      const hoverValue = value;
+      starButtons.forEach(function (btn, index) {
+        btn.textContent = index < hoverValue ? "★" : "☆";
+      });
+    });
+
+    star.addEventListener("mouseout", function () {
+      paintSelectedStars(selectedRating);
+    });
+  });
 
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const name = document.getElementById("name").value.trim();
-      const comment = document.getElementById("comment").value.trim();
+      const nameInput = document.getElementById("name");
+      const commentInput = document.getElementById("comment");
+
+      const name = nameInput.value.trim();
+      const comment = commentInput.value.trim();
 
       if (!name || !comment || selectedRating === 0) {
-        alert("Fill everything");
+        alert("Please enter your name, select a star rating, and write a review.");
         return;
       }
 
@@ -104,17 +149,14 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       saveReviews();
+      displayReviews(reviews);
 
-      console.log("Saved reviews:", reviews);
-      console.log("Stored in localStorage:", localStorage.getItem("reviews"));
-
-      display();
-
-     this.reset();
-selectedRating = 0;
-setRating(0);
+      form.reset();
+      selectedRating = 0;
+      paintSelectedStars(0);
+    });
   }
 
-  display();
+  displayReviews(reviews);
+  paintSelectedStars(0);
 });
-
