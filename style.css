@@ -280,28 +280,12 @@ footer::after {
 }
 /* TESTIMONIALS PAGE */
 
-.testimonials-page button {
-  margin: 5px;
-  padding: 10px 15px;
-  border: 2px solid #c00018;
-  background: white;
-  color: #c00018;
-  border-radius: 8px;
-  cursor: pointer;
+.testimonials-page .rating-summary {
+  text-align: center;
+  margin: 20px 0;
 }
 
-.testimonials-page button:hover {
-  background: #c00018;
-  color: white;
-}
-
-.testimonials-page .star {
-  font-size: 1.8rem;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
+.testimonials-page #reviews-container article,
 .testimonials-page article {
   background: white;
   border: 2px solid #eee;
@@ -330,21 +314,49 @@ footer::after {
   border-radius: 12px;
 }
 
-.rating-summary {
-  text-align: center;
-  margin: 20px 0;
+/* filter buttons only */
+.testimonials-page section button:not(.star),
+.testimonials-page form button[type="submit"] {
+  margin: 5px;
+  padding: 10px 15px;
+  border: 2px solid #c00018;
+  background: white;
+  color: #c00018;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
+.testimonials-page section button:not(.star):hover,
+.testimonials-page form button[type="submit"]:hover {
+  background: #c00018;
+  color: white;
+}
+
+/* star buttons only */
 .testimonials-page .star {
   font-size: 2rem;
-  cursor: pointer;
   color: #c00018;
+  background: transparent;
+  border: none;
+  padding: 0 4px;
   margin-right: 5px;
+  cursor: pointer;
   user-select: none;
+  line-height: 1;
+  transition: transform 0.15s ease;
 }
 
-.testimonials-page .star:hover {
+.testimonials-page .star:hover,
+.testimonials-page .star:focus {
   transform: scale(1.2);
+  background: transparent;
+  color: #c00018;
+  outline: none;
+}
+
+.testimonials-page #rating-text {
+  margin-top: 10px;
+  font-weight: 700;
 }
 /* =========================
    ABOUT PAGE STYLING
