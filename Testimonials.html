@@ -24,68 +24,61 @@
     <p>Cart</p>
   </header>
 
-  <main>
-    <section>
-      <h2>What Our Customers Say</h2>
-      <p>Real people. Real results.</p>
-    </section>
+ <main>
+  <section>
+    <h2>What Our Customers Say</h2>
+    <p>Real people. Real results.</p>
+  </section>
 
-    <section class="rating-summary">
-      <h3>Overall Rating</h3>
-      <p id="average-rating">0.0/5</p>
-      <p id="review-count">0 reviews</p>
-    </section>
+  <section class="rating-summary">
+    <h3>Overall Rating</h3>
+    <p id="average-rating">0.0/5</p>
+    <p id="review-count">0 reviews</p>
+  </section>
 
-    <section>
-      <h3>Filter Reviews</h3>
-      <button type="button" onclick="filterReviews('all')">All</button>
-      <button type="button" onclick="filterReviews(5)">5★</button>
-      <button type="button" onclick="filterReviews(4)">4★</button>
-      <button type="button" onclick="filterReviews(3)">3★</button>
-      <button type="button" onclick="filterReviews(2)">2★</button>
-      <button type="button" onclick="filterReviews(1)">1★</button>
-    </section>
+  <section>
+    <h3>Filter Reviews</h3>
+    <button type="button" onclick="filterReviews('all')">All</button>
+    <button type="button" onclick="filterReviews(5)">5★</button>
+    <button type="button" onclick="filterReviews(4)">4★</button>
+    <button type="button" onclick="filterReviews(3)">3★</button>
+    <button type="button" onclick="filterReviews(2)">2★</button>
+    <button type="button" onclick="filterReviews(1)">1★</button>
+  </section>
 
-    <section id="reviews-container"></section>
+  <section id="reviews-container"></section>
 
-    <section>
-      <h3>Leave a Review</h3>
+  <section>
+    <h3>Leave a Review</h3>
 
-      <form id="review-form">
-        <p>
-          <label for="name">Name:</label><br>
-          <input type="text" id="name" name="name" required>
-        </p>
+    <form id="review-form">
+      <p>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required>
+      </p>
 
-        <p>
-          <label>Rating:</label><br>
-          <span class="star" onclick="setRating(1)">☆</span>
-          <span class="star" onclick="setRating(2)">☆</span>
-          <span class="star" onclick="setRating(3)">☆</span>
-          <span class="star" onclick="setRating(4)">☆</span>
-          <span class="star" onclick="setRating(5)">☆</span>
-        </p>
+      <p>
+        <label>Rating:</label><br>
+        <button type="button" class="star" data-value="1" aria-label="1 star">☆</button>
+        <button type="button" class="star" data-value="2" aria-label="2 stars">☆</button>
+        <button type="button" class="star" data-value="3" aria-label="3 stars">☆</button>
+        <button type="button" class="star" data-value="4" aria-label="4 stars">☆</button>
+        <button type="button" class="star" data-value="5" aria-label="5 stars">☆</button>
+      </p>
 
-        <p id="rating-text">Selected: 0 stars</p>
+      <p id="rating-text">Selected: 0 stars</p>
 
-        <p>
-          <label for="comment">Review:</label><br>
-          <textarea id="comment" name="comment" rows="5" required></textarea>
-        </p>
+      <p>
+        <label for="comment">Review:</label><br>
+        <textarea id="comment" name="comment" rows="5" required></textarea>
+      </p>
 
-        <p>
-          <button type="submit">Submit Review</button>
-        </p>
-      </form>
-    </section>
-
-    <section>
-      <article>
-        <h3>Thank you for trusting ParchD</h3>
-        <p>We are proud to be part of your wellness journey.</p>
-      </article>
-    </section>
-  </main>
+      <p>
+        <button type="submit">Submit Review</button>
+      </p>
+    </form>
+  </section>
+</main>
 
   <footer>
     <p>
