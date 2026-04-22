@@ -1,0 +1,280 @@
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f6f6f6;
+  color: #111;
+  line-height: 1.5;
+}
+
+
+header {
+  background-color: #ffffff;
+  padding: 18px 60px;
+}
+
+header h1 {
+  display: inline-block;
+  font-size: 4rem;
+  color: #c00018;
+  font-weight: 700;
+  vertical-align: middle;
+  margin-right: 90px;
+}
+
+header nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1.5rem;
+  margin-right: 42px;
+  font-weight: 500;
+}
+
+header nav a:first-child {
+  color: #c00018;
+  border-bottom: 3px solid #c00018;
+  padding-bottom: 8px;
+}
+
+header p {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.7rem;
+  margin-left: 30px;
+}
+
+/* Main */
+main {
+  width: 100%;
+}
+
+/* Hero section */
+main section:first-of-type {
+  background-color: #f8efef;
+  padding: 45px 70px 30px 70px;
+}
+
+main section:first-of-type h2 {
+  font-size: 4.6rem;
+  max-width: 560px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+main section:first-of-type h2::after {
+  content: "";
+}
+
+main section:first-of-type p:first-of-type {
+  font-size: 1.45rem;
+  max-width: 560px;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+main section:first-of-type p:nth-of-type(2) {
+  margin-bottom: 20px;
+}
+
+main section:first-of-type p:nth-of-type(2) a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 700;
+  padding: 16px 34px;
+  border-radius: 12px;
+  margin-right: 18px;
+}
+
+main section:first-of-type p:nth-of-type(2) a:first-child {
+  background-color: #c00018;
+  color: #fff;
+}
+
+main section:first-of-type p:nth-of-type(2) a:last-child {
+  background-color: #fff;
+  color: #111;
+  border: 2px solid #c00018;
+}
+
+main section:first-of-type figure {
+  float: right;
+  width: 48%;
+  margin-top: -340px;
+}
+
+main section:first-of-type figure img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 18px;
+  background-color: #e6e6ea;
+}
+
+main section:first-of-type figure figcaption {
+  display: none;
+}
+
+/* Products section */
+main section:nth-of-type(2) {
+  padding: 22px 70px 10px 70px;
+}
+
+main section:nth-of-type(2) h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+main section:nth-of-type(2) article {
+  display: inline-block;
+  width: 39%;
+  background-color: #ffffff;
+  border: 2px solid #e7e7e7;
+  border-radius: 16px;
+  padding: 18px 22px;
+  vertical-align: top;
+  margin-right: 18px;
+}
+
+main section:nth-of-type(2) article figure {
+  display: inline-block;
+  width: 38%;
+  vertical-align: top;
+}
+
+main section:nth-of-type(2) article figure img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+  background-color: #e6e6ea;
+}
+
+main section:nth-of-type(2) article figure figcaption {
+  display: none;
+}
+
+main section:nth-of-type(2) article p,
+main section:nth-of-type(2) article h3 {
+  display: block;
+  margin-left: 42%;
+}
+
+main section:nth-of-type(2) article h3,
+main section:nth-of-type(2) article figcaption {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+main section:nth-of-type(2) article p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  max-width: 260px;
+}
+
+main section:nth-of-type(2) article p:last-child a {
+  color: #c00018;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Benefits section */
+main section:nth-of-type(3) {
+  background-color: #f8efef;
+  margin: 18px 70px 0 70px;
+  border-radius: 18px;
+  padding: 18px 20px 28px 20px;
+}
+
+main section:nth-of-type(3) h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+}
+
+main section:nth-of-type(3) article {
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+  vertical-align: top;
+  padding: 10px 12px;
+}
+
+main section:nth-of-type(3) article h3 {
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+}
+
+main section:nth-of-type(3) article p {
+  font-size: 1.05rem;
+  max-width: 210px;
+  margin: 0 auto;
+  color: #222;
+}
+
+/* Footer */
+footer {
+  background-color: #c00018;
+  margin: 0 70px 30px 70px;
+  padding: 18px 22px;
+  border-radius: 0 0 18px 18px;
+  color: #fff;
+}
+
+footer p:first-of-type {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 70px;
+}
+
+footer p:first-of-type a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  margin-right: 18px;
+  font-weight: 700;
+}
+
+footer nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+footer nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.15rem;
+  margin-right: 28px;
+}
+
+footer p:last-of-type {
+  display: inline-block;
+  float: right;
+  font-size: 1.05rem;
+  margin-top: 4px;
+}
+
+/* Useful if you want the word "glowing life." in red */
+span,
+.highlight {
+  color: #c00018;
+}
+
+/* Clear float */
+main section:first-of-type::after,
+footer::after {
+  content: "";
+  display: block;
+  clear: both;
+}
