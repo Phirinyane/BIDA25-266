@@ -334,6 +334,18 @@ footer::after {
   text-align: center;
   margin: 20px 0;
 }
+
+.testimonials-page .star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #c00018;
+  margin-right: 5px;
+  user-select: none;
+}
+
+.testimonials-page .star:hover {
+  transform: scale(1.2);
+}
 /* =========================
    ABOUT PAGE STYLING
 ========================= */
