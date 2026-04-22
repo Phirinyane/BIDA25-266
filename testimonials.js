@@ -149,6 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       saveReviews();
+      console.log("Saved reviews:", reviews);
+      console.log("Local storage now:", localStorage.getItem("reviews"));
       displayReviews(reviews);
 
       form.reset();
