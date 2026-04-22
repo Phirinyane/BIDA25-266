@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ParchD Home</title>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>ParchD</h1>
+    <p>🛒</p>
+  </header>
+
+  <!-- Introduction -->
+  <main>
+    <section>
+      <h2>Introduction</h2>
+
+      <p>
+        Welcome to ParchD, a refreshing drink brand designed to bring bold flavor
+        and a unique experience. Our drinks are crafted to satisfy your thirst
+        while standing out with style and quality.
+      </p>
+
+      <p>
+        Explore our products and discover what makes ParchD different.
+      </p>
+
+      <nav>
+        <a href="#products">Products</a>
+        <a href="#about">About Us</a>
+      </nav>
+
+      <figure>
+        <img src="placeholder.jpg" alt="ParchD product image">
+        <figcaption>Featured Product</figcaption>
+      </figure>
+    </section>
+
+    <!-- Products -->
+    <section id="products">
+      <h2>Products</h2>
+
+      <article>
+        <figure>
+          <img src="product1.jpg" alt="ParchD Classic">
+          <figcaption>ParchD Classic</figcaption>
+        </figure>
+        <p>
+          A refreshing everyday drink with a smooth taste and premium feel.
+        </p>
+      </article>
+
+      <article>
+        <figure>
+          <img src="product2.jpg" alt="ParchD Hibiscus">
+          <figcaption>ParchD Hibiscus</figcaption>
+        </figure>
+        <p>
+          A vibrant hibiscus-inspired drink with a unique floral flavor.
+        </p>
+      </article>
+    </section>
+
+    <!-- Product Benefits -->
+    <section>
+      <h2>Product Benefits</h2>
+
+      <article>
+        <figure>
+          <img src="benefit1.jpg" alt="Refreshing taste">
+        </figure>
+        <p>
+          Enjoy a crisp and refreshing taste that keeps you energized throughout the day.
+        </p>
+      </article>
+
+      <article>
+        <figure>
+          <img src="benefit2.jpg" alt="Unique design">
+        </figure>
+        <p>
+          Stylish packaging and branding that stands out and feels premium.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <section>
+      <p>
+        <a href="#">Facebook</a> |
+        <a href="#">LinkedIn</a> |
+        <a href="#">Instagram</a>
+      </p>
+    </section>
+
+    <nav>
+      <a href="#">FAQ</a>
+      <a href="#">Testimonials</a>
+      <a href="#">Blog</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
