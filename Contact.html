@@ -4,12 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ParchD | Contact Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>ParchD</h1>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" onclick="closeMenu()">&times;</button>
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="About.html" onclick="closeMenu()">About Us</a>
+    <a href="Products.html" onclick="closeMenu()">Products</a>
+    <a href="Shop.html" onclick="closeMenu()">Shop</a>
+    <a href="Testimonials.html" onclick="closeMenu()">Testimonials</a>
+    <a href="FAQ.html" onclick="closeMenu()">FAQ</a>
+    <a href="Contact.html" onclick="closeMenu()">Contact Us</a>
+  </div>
 
+  <header>
+    <a href="index.html" class="logo">ParchD</a>
     <nav>
       <a href="index.html">Home</a>
       <a href="About.html">About Us</a>
@@ -17,62 +31,115 @@
       <a href="Shop.html">Shop</a>
       <a href="Testimonials.html">Testimonials</a>
       <a href="FAQ.html">FAQ</a>
-      <a href="Contact.html">Contact Us</a>
+      <a href="Contact.html" class="active">Contact Us</a>
     </nav>
-
-    <p>Cart</p>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div class="cart-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </div>
+      <button class="hamburger" onclick="openMenu()"><span></span><span></span><span></span></button>
+    </div>
   </header>
 
   <main>
-    <section>
+    <div class="contact-page-intro">
       <h2>Contact Us</h2>
-      <p>We’d love to hear from you!</p>
-    </section>
+      <p>We'd love to hear from you!</p>
+    </div>
 
-    <section>
-      <article>
-        <h3>WhatsApp</h3>
-        <p>Chat with us for orders and enquiries.</p>
-        <p><a href="https://wa.me/26700000000">Chat Now</a></p>
-      </article>
+    <div class="contact-wrap">
+      <div class="contact-cards">
 
-      <article>
-        <h3>Instagram</h3>
-        <p>Follow us for updates, offers and more.</p>
-        <p><a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==">Follow Us</a></p>
-      </article>
+        <!-- WhatsApp -->
+        <div class="contact-card">
+          <div class="contact-card-icon whatsapp">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="#25D366">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.522 5.837L.057 23.571l5.86-1.537A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 0 1-5.001-1.368l-.359-.214-3.72.976.993-3.624-.234-.372A9.78 9.78 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+            </svg>
+          </div>
+          <h3>WhatsApp</h3>
+          <p>Chat with us for orders and enquiries.</p>
+          <a href="https://wa.me/26700000000" class="btn-primary">Chat Now</a>
+        </div>
 
-      <article>
-        <h3>Facebook</h3>
-        <p>Keep up with us.</p>
-        <p><a href="https://www.facebook.com/share/1RYqaPEzoC/?mibextid=wwXIfr">Follow Us</a></p>
-      </article>
+        <!-- Instagram -->
+        <div class="contact-card">
+          <div class="contact-card-icon instagram">
+            <svg width="40" height="40" viewBox="0 0 24 24">
+              <defs>
+                <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#f09433"/>
+                  <stop offset="25%" style="stop-color:#e6683c"/>
+                  <stop offset="50%" style="stop-color:#dc2743"/>
+                  <stop offset="75%" style="stop-color:#cc2366"/>
+                  <stop offset="100%" style="stop-color:#bc1888"/>
+                </linearGradient>
+              </defs>
+              <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#ig-grad)"/>
+              <circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="1.8"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+            </svg>
+          </div>
+          <h3>Instagram</h3>
+          <p>Follow us for updates, offers and more.</p>
+          <a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==" target="_blank" class="btn-primary">Follow Us</a>
+        </div>
 
-      <article>
-        <h3>Email</h3>
-        <p>Send us an email and we’ll get back to you.</p>
-        <p><a href="parchdbw@gmail.com">Send Us an Email</a></p>
-      </article>
-    </section>
+        <!-- Email -->
+        <div class="contact-card">
+          <div class="contact-card-icon email">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="1.6">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <h3>Email</h3>
+          <p>Send us an email and we'll get back to you.</p>
+          <a href="mailto:parchdbw@gmail.com" class="btn-primary">Send Email</a>
+        </div>
 
-    <section>
-      <article>
-        <h3>Based in Gaborone, Botswana</h3>
-        <p>Proudly serving our community with love and care.</p>
-      </article>
-    </section>
+      </div>
+
+      <!-- Location -->
+      <div class="contact-location">
+        <div class="location-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Based in Gaborone, Botswana</h3>
+          <p>Proudly serving our community with love and care.</p>
+        </div>
+      </div>
+
+    </div>
   </main>
 
   <footer>
-    <p>
-      <a href="https://www.facebook.com/share/1RYqaPEzoC/?mibextid=wwXIfr">Facebook</a>
-      <a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==">Instagram</a>
-      <a href="https://wa.me/">WhatsApp</a>
-    </p>
-
-
-    <p>&copy; 2026 ParchD. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/1RYqaPEzoC/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://wa.me/" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.522 5.837L.057 23.571l5.86-1.537A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 0 1-5.001-1.368l-.359-.214-3.72.976.993-3.624-.234-.372A9.78 9.78 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg></a>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a><a href="About.html">About Us</a><a href="Products.html">Products</a>
+        <a href="Shop.html">Shop</a><a href="Testimonials.html">Testimonials</a><a href="FAQ.html">FAQ</a><a href="Contact.html">Contact Us</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 ParchD. All rights reserved.</p>
+    </div>
   </footer>
 
+  <script>
+    function openMenu() { document.getElementById('mobileNav').classList.add('open'); }
+    function closeMenu() { document.getElementById('mobileNav').classList.remove('open'); }
+  </script>
 </body>
 </html>
