@@ -1,180 +1,163 @@
-/* --- Root Variables & Reset --- */
+/* --- Root Styles --- */
 :root {
-  --primary-red: #b3001b;      /* Matches the ParchD logo and buttons */
-  --soft-blush: #fff5f5;       /* Background used in Home.jpg and Shop Our Products.jpg */
-  --text-dark: #1a1a1a;
-  --white: #ffffff;
-  --transition: all 0.3s ease;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  --parch-red: #b3001b;
+  --parch-blush: #fff5f5;
+  --text-grey: #555;
+  --text-black: #111;
 }
 
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: var(--text-dark);
-  line-height: 1.6;
-  background-color: var(--white);
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--text-black);
 }
 
-/* --- Navigation & Glowing Hover --- */
+/* --- Header & Glowing Nav --- */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 5%;
-  background-color: var(--white);
+  padding: 20px 8%;
+  background: white;
 }
 
-header h1 {
-  color: var(--primary-red);
-  font-size: 1.8rem;
-  letter-spacing: -1px;
+.logo {
+  color: var(--parch-red);
+  font-size: 28px;
+  font-weight: 800;
 }
 
 nav a {
   text-decoration: none;
-  color: #555;
+  color: var(--text-black);
   margin: 0 15px;
-  font-size: 0.95rem;
+  font-size: 14px;
   font-weight: 500;
-  padding: 5px 0;
-  transition: var(--transition);
-  position: relative;
+  transition: all 0.3s ease;
 }
 
 /* THE GLOW EFFECT */
 nav a:hover {
-  color: var(--primary-red);
+  color: var(--parch-red);
   text-shadow: 0 0 10px rgba(179, 0, 27, 0.4), 
                0 0 20px rgba(179, 0, 27, 0.2);
 }
 
-/* Active page line (as seen in About Us (2).jpg) */
 nav a.active {
-  border-bottom: 2px solid var(--primary-red);
+  border-bottom: 2px solid var(--parch-red);
+  padding-bottom: 5px;
 }
 
-/* --- Hero Section (Home.jpg) --- */
-main section:first-of-type {
-  background-color: var(--soft-blush);
-  padding: 60px 5%;
+/* --- Hero Section (Mirroring Home_2.jpg) --- */
+.hero-container {
+  background-color: var(--parch-blush);
   display: flex;
   align-items: center;
+  padding: 60px 8%;
   gap: 40px;
 }
 
-h2 span {
-  color: var(--primary-red);
+.hero-text { flex: 1; }
+.hero-image { flex: 1.2; text-align: right; }
+.hero-image img { width: 100%; border-radius: 12px; }
+
+.hero-text h2 {
+  font-size: 42px;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
-/* Shop Now & Learn More Buttons */
-a[href="shop.html"], a[href="about.html"] {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 8px;
+.hero-text h2 span { color: var(--parch-red); }
+
+.hero-text p {
+  color: var(--text-grey);
+  max-width: 450px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons .btn-filled {
+  background: var(--parch-red);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
   text-decoration: none;
-  font-weight: bold;
-  margin-right: 10px;
-  transition: var(--transition);
+  margin-right: 15px;
 }
 
-a[href="shop.html"] {
-  background-color: var(--primary-red);
-  color: var(--white);
-}
-
-a[href="about.html"] {
+.btn-outline {
   border: 1px solid #ccc;
-  color: var(--text-dark);
-  background: var(--white);
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  background: white;
 }
 
-a[href="shop.html"]:hover {
-  background-color: #8a0015;
-  box-shadow: 0 4px 15px rgba(179, 0, 27, 0.3);
+/* --- Product Cards --- */
+.content-wrapper { padding: 50px 8%; }
+.section-title { font-size: 20px; margin-bottom: 30px; }
+
+.product-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
 }
 
-/* --- Product Cards (Our Products.jpg) --- */
-section:nth-of-type(2) {
-  padding: 60px 5%;
-  text-align: center;
-}
-
-article {
-  display: inline-block;
-  width: 45%;
-  margin: 2%;
-  padding: 20px;
-  background: var(--white);
+.product-preview-card {
+  display: flex;
+  align-items: center;
   border: 1px solid #f0f0f0;
+  padding: 20px;
   border-radius: 12px;
-  vertical-align: top;
 }
 
-article figure img {
-  width: 100%;
+.product-preview-card img {
+  width: 120px;
+  height: 120px;
+  background: #eee;
   border-radius: 8px;
-  background-color: #eee;
+  margin-right: 20px;
 }
 
-/* --- Why Choose Us Grid (Home.jpg bottom) --- */
-section:nth-of-type(3) {
+.red-link {
+  color: var(--parch-red);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* --- Why Choose Us (Grid) --- */
+.why-choose-container {
+  background-color: var(--parch-blush);
+  text-align: center;
+  padding: 60px 8%;
+}
+
+.features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 40px 5%;
-  background: var(--soft-blush);
-  text-align: center;
+  margin-top: 40px;
 }
 
-section:nth-of-type(3) h3 {
-  font-size: 1rem;
-  color: var(--primary-red);
-}
+.feature-item h5 { margin: 15px 0 5px; font-size: 16px; }
+.feature-item p { font-size: 14px; color: var(--text-grey); }
 
-/* --- Footer (Contact Us.jpg) --- */
+/* --- Footer (Matches Contact Us.jpg style) --- */
 footer {
-  background-color: var(--primary-red);
-  color: var(--white);
-  padding: 40px 5%;
+  background-color: var(--parch-red);
+  color: white;
   text-align: center;
+  padding: 40px 8%;
 }
 
-footer a {
-  color: var(--white);
+.footer-links a {
+  color: white;
   margin: 0 10px;
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: var(--transition);
+  font-size: 13px;
 }
 
-footer a:hover {
-  opacity: 0.8;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-}
-
-footer p:last-child {
-  margin-top: 20px;
-  font-size: 0.85rem;
-  opacity: 0.9;
-}
-
-/* --- FAQ & Testimonials Specifics --- */
-/* (Referencing ParchD FAQ.jpg and Customer Testimonials.png) */
-.faq-item {
-  border: 1px solid #eee;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  padding: 20px;
-}
-
-.testimonial-card {
-  border: 1px solid #eee;
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+.social-icons img {
+  width: 24px;
+  filter: invert(1);
+  margin: 0 10px 20px;
 }
