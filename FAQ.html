@@ -4,92 +4,152 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ParchD | FAQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>ParchD</h1>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" onclick="closeMenu()">&times;</button>
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="About.html" onclick="closeMenu()">About Us</a>
+    <a href="Products.html" onclick="closeMenu()">Products</a>
+    <a href="Shop.html" onclick="closeMenu()">Shop</a>
+    <a href="Testimonials.html" onclick="closeMenu()">Testimonials</a>
+    <a href="FAQ.html" onclick="closeMenu()">FAQ</a>
+    <a href="Contact.html" onclick="closeMenu()">Contact Us</a>
+  </div>
 
+  <header>
+    <a href="index.html" class="logo">ParchD</a>
     <nav>
       <a href="index.html">Home</a>
       <a href="About.html">About Us</a>
       <a href="Products.html">Products</a>
       <a href="Shop.html">Shop</a>
       <a href="Testimonials.html">Testimonials</a>
-      <a href="FAQ.html">FAQ</a>
+      <a href="FAQ.html" class="active">FAQ</a>
       <a href="Contact.html">Contact Us</a>
     </nav>
-
-    <p>Cart</p>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div class="cart-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </div>
+      <button class="hamburger" onclick="openMenu()"><span></span><span></span><span></span></button>
+    </div>
   </header>
 
   <main>
-    <section>
+    <div class="faq-page-intro">
       <h2>Frequently Asked Questions</h2>
       <p>Find answers to the most common questions about ParchD products and services.</p>
-    </section>
+    </div>
 
-    <section>
-      <h3>Health Benefits</h3>
+    <div class="faq-wrap">
 
-      <article>
-        <h4>What are the health benefits of ParchD products?</h4>
-        <p>
-          Our products support gut health, improve digestion, boost immunity and
-          promote healthy, glowing skin.
-        </p>
-      </article>
+      <!-- Health Benefits - open by default -->
+      <div class="faq-group open" id="faq-health">
+        <div class="faq-group-header" onclick="toggleFaq('faq-health')">
+          <div class="faq-group-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <span class="faq-group-title">Health Benefits</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+        </div>
+        <div class="faq-body">
+          <div class="faq-item">
+            <h4>What are the health benefits of ParchD products?</h4>
+            <p>Our products support gut health, improve digestion, boost immunity and promote healthy, glowing skin.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Are ParchD products good for daily use?</h4>
+            <p>Yes. They are made with natural ingredients and probiotics that are safe to enjoy daily.</p>
+          </div>
+        </div>
+      </div>
 
-      <article>
-        <h4>Are ParchD products good for daily use?</h4>
-        <p>
-          Yes. They are made with natural ingredients and probiotics that are safe
-          to enjoy daily.
-        </p>
-      </article>
-    </section>
+      <!-- Storage & Shelf Life -->
+      <div class="faq-group" id="faq-storage">
+        <div class="faq-group-header" onclick="toggleFaq('faq-storage')">
+          <div class="faq-group-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </div>
+          <span class="faq-group-title">Storage &amp; Shelf Life</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+        </div>
+        <div class="faq-body">
+          <div class="faq-item">
+            <h4>Do the products need refrigeration?</h4>
+            <p>Yes. We recommend keeping all products refrigerated.</p>
+          </div>
+          <div class="faq-item">
+            <h4>How long do the products last?</h4>
+            <p>Our drinks last up to 7 days and yoghurts up to 10–14 days when refrigerated.</p>
+          </div>
+        </div>
+      </div>
 
-    <section>
-      <h3>Storage &amp; Shelf Life</h3>
+      <!-- Delivery Details -->
+      <div class="faq-group" id="faq-delivery">
+        <div class="faq-group-header" onclick="toggleFaq('faq-delivery')">
+          <div class="faq-group-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="1" y="3" width="15" height="13" rx="1"/>
+              <path d="M16 8h4l3 5v3h-7V8z"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <span class="faq-group-title">Delivery Details</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+        </div>
+        <div class="faq-body">
+          <div class="faq-item">
+            <h4>Do you deliver in Gaborone?</h4>
+            <p>Yes. We deliver across Gaborone.</p>
+          </div>
+          <div class="faq-item">
+            <h4>How do I place an order?</h4>
+            <p>You can order directly on our website or through WhatsApp.</p>
+          </div>
+        </div>
+      </div>
 
-      <article>
-        <h4>Do the products need refrigeration?</h4>
-        <p>Yes. We recommend keeping all products refrigerated.</p>
-      </article>
-
-      <article>
-        <h4>How long do the products last?</h4>
-        <p>
-          Our drinks last up to 7 days and yoghurts up to 10–14 days when refrigerated.
-        </p>
-      </article>
-    </section>
-
-    <section>
-      <h3>Delivery Details</h3>
-
-      <article>
-        <h4>Do you deliver in Gaborone?</h4>
-        <p>Yes. We deliver across Gaborone.</p>
-      </article>
-
-      <article>
-        <h4>How do I place an order?</h4>
-        <p>You can order directly on our website or through WhatsApp.</p>
-      </article>
-    </section>
+    </div>
   </main>
 
   <footer>
-    <p>
-      <a href="https://www.facebook.com/share/1RYqaPEzoC/?mibextid=wwXIfr">Facebook</a>
-      <a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==">Instagram</a>
-      <a href="https://wa.me/">WhatsApp</a>
-    </p>
-
-
-    <p>&copy; 2026 ParchD. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/1RYqaPEzoC/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://wa.me/" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.522 5.837L.057 23.571l5.86-1.537A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 0 1-5.001-1.368l-.359-.214-3.72.976.993-3.624-.234-.372A9.78 9.78 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg></a>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a><a href="About.html">About Us</a><a href="Products.html">Products</a>
+        <a href="Shop.html">Shop</a><a href="Testimonials.html">Testimonials</a><a href="FAQ.html">FAQ</a><a href="Contact.html">Contact Us</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 ParchD. All rights reserved.</p>
+    </div>
   </footer>
 
+  <script>
+    function openMenu() { document.getElementById('mobileNav').classList.add('open'); }
+    function closeMenu() { document.getElementById('mobileNav').classList.remove('open'); }
+    function toggleFaq(id) {
+      const group = document.getElementById(id);
+      group.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
