@@ -9,10 +9,9 @@
 <body>
 
   <header>
-    <h1>ParchD</h1>
-
+    <h1 class="logo">ParchD</h1>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="About.html">About Us</a>
       <a href="Products.html">Products</a>
       <a href="Shop.html">Shop</a>
@@ -20,88 +19,92 @@
       <a href="FAQ.html">FAQ</a>
       <a href="Contact.html">Contact Us</a>
     </nav>
-
-    <p>Cart</p>
+    <div class="cart-icon">🛒</div>
   </header>
 
   <main>
-    <section>
-      <h2>
-  A healthy gut is the foundation of a
-  <span>glowing life.</span>
-</h2>
-
-      <p>
-        Fermented wellness drinks and collagen-infused yoghurts crafted to support
-        your gut, boost your wellness and help you glow from the inside out.
-      </p>
-
-      <p>
-        <a href="shop.html">Shop Now</a>
-        <a href="about.html">Learn More</a>
-      </p>
-
-      <figure>
-        <img src="placeholder-hero.jpg" alt="Placeholder image for featured ParchD products">
-        <figcaption>Featured ParchD products</figcaption>
-      </figure>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2>A healthy gut is the foundation of a <span>glowing life.</span></h2>
+        <p>Fermented wellness drinks and collagen-infused yoghurts crafted to support your gut, boost your wellness and help you glow from the inside out.</p>
+        <div class="hero-btns">
+          <a href="shop.html" class="btn-red">Shop Now</a>
+          <a href="about.html" class="btn-outline">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="Home.jpg" alt="Featured Products">
+      </div>
     </section>
 
-    <section>
-      <h2>Our Products</h2>
+    <!-- Our Products Section -->
+    <section class="products-preview">
+      <h3>Our Products</h3>
+      <div class="product-row">
+        <article class="product-card">
+          <img src="Our Products.jpg" alt="Hibiscus Drinks">
+          <div class="card-text">
+            <h4>Hibiscus Drinks</h4>
+            <p>Refreshing fermented drinks with natural ingredients.</p>
+            <a href="products.html" class="view-link">View Products →</a>
+          </div>
+        </article>
 
-      <article>
-        <figure>
-          <img src="placeholder-hibiscus.jpg" alt="Placeholder image for hibiscus drinks">
-          <figcaption>Hibiscus Drinks</figcaption>
-        </figure>
-        <p>Refreshing fermented drinks with natural ingredients.</p>
-        <p><a href="products.html">View Products</a></p>
-      </article>
-
-      <article>
-        <figure>
-          <img src="placeholder-yoghurt.jpg" alt="Placeholder image for collagen yoghurts">
-          <figcaption>Collagen Yoghurts</figcaption>
-        </figure>
-        <p>Creamy yoghurts infused with collagen for beauty and gut health.</p>
-        <p><a href="products.html">View Products</a></p>
-      </article>
+        <article class="product-card">
+          <img src="Our Products.jpg" alt="Collagen Yoghurts">
+          <div class="card-text">
+            <h4>Collagen Yoghurts</h4>
+            <p>Creamy yoghurts infused with collagen for beauty and gut health.</p>
+            <a href="products.html" class="view-link">View Products →</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section>
-      <h2>Why Choose ParchD?</h2>
-
-      <article>
-        <h3>Supports Gut Health</h3>
-        <p>Probiotics for a happy gut.</p>
-      </article>
-
-      <article>
-        <h3>Natural Ingredients</h3>
-        <p>Carefully selected and wholesome.</p>
-      </article>
-
-      <article>
-        <h3>Beauty &amp; Glow</h3>
-        <p>Supports skin, hair and overall glow.</p>
-      </article>
-
-      <article>
-        <h3>Made with Care</h3>
-        <p>Crafted in small batches for premium quality.</p>
-      </article>
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+      <h3>Why Choose ParchD?</h3>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="icon">🧬</div>
+          <h5>Supports Gut Health</h5>
+          <p>Probiotics for a happy gut.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🌱</div>
+          <h5>Natural Ingredients</h5>
+          <p>Carefully selected and wholesome.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">✨</div>
+          <h5>Beauty & Glow</h5>
+          <p>Supports skin, hair and overall glow.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">❤️</div>
+          <h5>Made with Care</h5>
+          <p>Crafted in small batches for premium quality.</p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>
-      <a href="https://www.facebook.com/share/1RYqaPEzoC/?mibextid=wwXIfr">Facebook</a>
-      <a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==">Instagram</a>
-      <a href="https://wa.me/">WhatsApp</a>
-    </p>
-
-
+    <div class="footer-socials">
+      <a href="#">FB</a>
+      <a href="#">IG</a>
+      <a href="#">WA</a>
+    </div>
+    <nav class="footer-nav">
+       <a href="index.html">Home</a>
+       <a href="About.html">About Us</a>
+       <a href="Products.html">Products</a>
+       <a href="Shop.html">Shop</a>
+       <a href="Testimonials.html">Testimonials</a>
+       <a href="FAQ.html">FAQ</a>
+       <a href="Contact.html">Contact Us</a>
+    </nav>
     <p>&copy; 2026 ParchD. All rights reserved.</p>
   </footer>
 
