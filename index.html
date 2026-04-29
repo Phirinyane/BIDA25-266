@@ -3,45 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ParchD | Home</title>
-
   <link rel="stylesheet" href="style.css">
+  <title>ParchD | Home</title>
 </head>
-
 <body>
 
-<header id="site-header">
-  <h1 class="logo">ParchD</h1>
+  <header>
+    <div class="header-container">
+      <h1 class="logo">ParchD</h1>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="About.html">About Us</a>
+        <a href="Products.html">Products</a>
+        <a href="Shop.html">Shop</a>
+        <a href="Testimonials.html">Testimonials</a>
+        <a href="FAQ.html">FAQ</a>
+        <a href="Contact.html">Contact Us</a>
+      </nav>
+      <div class="cart-icon">🛒</div>
+    </div>
+  </header>
 
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="About.html">About Us</a>
-    <a href="Products.html">Products</a>
-    <a href="Shop.html">Shop</a>
-    <a href="Testimonials.html">Testimonials</a>
-    <a href="FAQ.html">FAQ</a>
-    <a href="Contact.html">Contact Us</a>
-  </nav>
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h2>A healthy gut is the foundation of a <span>glowing life.</span></h2>
+          <p>Fermented wellness drinks and collagen-infused yoghurts crafted to support your gut, boost your wellness and help you glow from the inside out.</p>
+          <div class="hero-actions">
+            <a href="shop.html" class="btn-primary">Shop Now</a>
+            <a href="about.html" class="btn-secondary">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="Home_2.jpg" alt="Featured Products">
+        </div>
+      </div>
+    </section>
 
-  <a href="cart.html" class="cart">🛒</a>
-</header>
+    <!-- PRODUCT PREVIEW -->
+    <section class="products">
+      <div class="container">
+        <h3 class="section-label">Our Products</h3>
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="Our Products.jpg" alt="Hibiscus Drinks">
+            <div class="card-info">
+              <h4>Hibiscus Drinks</h4>
+              <p>Refreshing fermented drinks with natural ingredients.</p>
+              <a href="Products.html" class="text-link">View Products &rarr;</a>
+            </div>
+          </article>
 
-<main>
-  <section>
-    <h2>Welcome to ParchD</h2>
-    <p>Your wellness starts here.</p>
-  </section>
+          <article class="product-card">
+            <img src="Our Products.jpg" alt="Collagen Yoghurts">
+            <div class="card-info">
+              <h4>Collagen Yoghurts</h4>
+              <p>Creamy yoghurts infused with collagen for beauty and gut health.</p>
+              <a href="Products.html" class="text-link">View Products &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h3>Our Products</h3>
-    <p>Explore our hibiscus drinks and collagen yoghurts.</p>
-  </section>
-</main>
+    <!-- WHY CHOOSE SECTION -->
+    <section class="why-choose">
+      <div class="container">
+        <h3 class="section-title">Why Choose ParchD?</h3>
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="icon">🧬</div>
+            <h5>Supports Gut Health</h5>
+            <p>Probiotics for a happy gut.</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon">🌱</div>
+            <h5>Natural Ingredients</h5>
+            <p>Carefully selected and wholesome.</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon">✨</div>
+            <h5>Beauty & Glow</h5>
+            <p>Supports skin, hair and overall glow.</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon">🛡️</div>
+            <h5>Made with Care</h5>
+            <p>Crafted in small batches for premium quality.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<footer>
-  <p>&copy; 2026 ParchD. All rights reserved.</p>
-</footer>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="social-links">
+        <a href="#">FB</a> <a href="#">IG</a> <a href="#">WA</a>
+      </div>
+  
 
-<script src="header.js"></script>
+      <p class="copyright">&copy; 2026 ParchD. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
