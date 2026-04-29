@@ -3,16 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <title>ParchD | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" onclick="closeMenu()" aria-label="Close menu">&times;</button>
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="About.html" onclick="closeMenu()">About Us</a>
+    <a href="Products.html" onclick="closeMenu()">Products</a>
+    <a href="Shop.html" onclick="closeMenu()">Shop</a>
+    <a href="Testimonials.html" onclick="closeMenu()">Testimonials</a>
+    <a href="FAQ.html" onclick="closeMenu()">FAQ</a>
+    <a href="Contact.html" onclick="closeMenu()">Contact Us</a>
+  </div>
+
   <header>
-    <div class="header-container">
-      <h1 class="logo">ParchD</h1>
-      <nav>
-        <a href="index.html" class="active">Home</a>
+    <a href="index.html" class="logo">ParchD</a>
+
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="About.html">About Us</a>
+      <a href="Products.html">Products</a>
+      <a href="Shop.html">Shop</a>
+      <a href="Testimonials.html">Testimonials</a>
+      <a href="FAQ.html">FAQ</a>
+      <a href="Contact.html">Contact Us</a>
+    </nav>
+
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div class="cart-icon" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </div>
+      <button class="hamburger" onclick="openMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <h2>
+          A healthy gut is the foundation of a
+          <span>glowing life.</span>
+        </h2>
+        <p>
+          Fermented wellness drinks and collagen-infused yoghurts crafted to support
+          your gut, boost your wellness and help you glow from the inside out.
+        </p>
+        <div class="hero-buttons">
+          <a href="Shop.html" class="btn-primary">Shop Now</a>
+          <a href="About.html" class="btn-outline">Learn More</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="placeholder-hero.jpg" alt="Featured ParchD products"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="placeholder-box" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          PLACEHOLDER IMAGE
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products-section">
+      <h2 class="section-title">Our Products</h2>
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-thumb">
+            <img src="placeholder-hibiscus.jpg" alt="Hibiscus Drinks"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              PLACEHOLDER IMAGE
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Hibiscus Drinks</h3>
+            <p>Refreshing fermented drinks with natural ingredients.</p>
+            <a href="Products.html" class="link-arrow">View Products &rarr;</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-thumb">
+            <img src="placeholder-yoghurt.jpg" alt="Collagen Yoghurts"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              PLACEHOLDER IMAGE
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Collagen Yoghurts</h3>
+            <p>Creamy yoghurts infused with collagen for beauty and gut health.</p>
+            <a href="Products.html" class="link-arrow">View Products &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Why Choose ParchD -->
+    <section class="why-section">
+      <div class="why-inner">
+        <h2 class="section-title">Why Choose ParchD?</h2>
+        <div class="why-grid">
+
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2C9 2 6 5 6 9c0 4.5 4 8 6 10 2-2 6-5.5 6-10 0-4-3-7-6-7z"/>
+                <circle cx="12" cy="8" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <h3>Supports Gut Health</h3>
+            <p>Probiotics for a happy gut.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+                <path d="M12 8v4M10 10l2 2 2-2"/>
+              </svg>
+            </div>
+            <h3>Natural Ingredients</h3>
+            <p>Carefully selected and wholesome.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l2 5h5l-4 3 1.5 5L12 12l-4.5 3L9 10 5 7h5z"/>
+                <path d="M12 15v7M9 20h6"/>
+              </svg>
+            </div>
+            <h3>Beauty &amp; Glow</h3>
+            <p>Supports skin, hair and overall glow.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s-8-4.5-8-11V5l8-3 8 3v6c0 6.5-8 11-8 11z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <h3>Made with Care</h3>
+            <p>Crafted in small batches for premium quality.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/1RYqaPEzoC/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/" target="_blank" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.522 5.837L.057 23.571l5.86-1.537A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 0 1-5.001-1.368l-.359-.214-3.72.976.993-3.624-.234-.372A9.78 9.78 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
         <a href="About.html">About Us</a>
         <a href="Products.html">Products</a>
         <a href="Shop.html">Shop</a>
@@ -20,94 +219,15 @@
         <a href="FAQ.html">FAQ</a>
         <a href="Contact.html">Contact Us</a>
       </nav>
-      <div class="cart-icon">🛒</div>
-    </div>
-  </header>
 
-  <main>
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="hero-container">
-        <div class="hero-content">
-          <h2>A healthy gut is the foundation of a <span>glowing life.</span></h2>
-          <p>Fermented wellness drinks and collagen-infused yoghurts crafted to support your gut, boost your wellness and help you glow from the inside out.</p>
-          <div class="hero-actions">
-            <a href="shop.html" class="btn-primary">Shop Now</a>
-            <a href="about.html" class="btn-secondary">Learn More</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="Home_2.jpg" alt="Featured Products">
-        </div>
-      </div>
-    </section>
-
-    <!-- PRODUCT PREVIEW -->
-    <section class="products">
-      <div class="container">
-        <h3 class="section-label">Our Products</h3>
-        <div class="product-grid">
-          <article class="product-card">
-            <img src="Our Products.jpg" alt="Hibiscus Drinks">
-            <div class="card-info">
-              <h4>Hibiscus Drinks</h4>
-              <p>Refreshing fermented drinks with natural ingredients.</p>
-              <a href="Products.html" class="text-link">View Products &rarr;</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <img src="Our Products.jpg" alt="Collagen Yoghurts">
-            <div class="card-info">
-              <h4>Collagen Yoghurts</h4>
-              <p>Creamy yoghurts infused with collagen for beauty and gut health.</p>
-              <a href="Products.html" class="text-link">View Products &rarr;</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY CHOOSE SECTION -->
-    <section class="why-choose">
-      <div class="container">
-        <h3 class="section-title">Why Choose ParchD?</h3>
-        <div class="features-grid">
-          <div class="feature-item">
-            <div class="icon">🧬</div>
-            <h5>Supports Gut Health</h5>
-            <p>Probiotics for a happy gut.</p>
-          </div>
-          <div class="feature-item">
-            <div class="icon">🌱</div>
-            <h5>Natural Ingredients</h5>
-            <p>Carefully selected and wholesome.</p>
-          </div>
-          <div class="feature-item">
-            <div class="icon">✨</div>
-            <h5>Beauty & Glow</h5>
-            <p>Supports skin, hair and overall glow.</p>
-          </div>
-          <div class="feature-item">
-            <div class="icon">🛡️</div>
-            <h5>Made with Care</h5>
-            <p>Crafted in small batches for premium quality.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="social-links">
-        <a href="#">FB</a> <a href="#">IG</a> <a href="#">WA</a>
-      </div>
-  
-
-      <p class="copyright">&copy; 2026 ParchD. All rights reserved.</p>
+      <p class="footer-copy">&copy; 2026 ParchD. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    function openMenu() { document.getElementById('mobileNav').classList.add('open'); }
+    function closeMenu() { document.getElementById('mobileNav').classList.remove('open'); }
+  </script>
 
 </body>
 </html>
