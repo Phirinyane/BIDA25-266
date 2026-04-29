@@ -8,6 +8,199 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Make page fill full height so footer always sticks to bottom */
+    html, body { height: 100%; }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main { flex: 1; }
+
+    /* ── PAGE INTRO ── */
+    .test-intro {
+      text-align: center;
+      padding: 3.5rem 5% 2.5rem;
+      background: var(--white);
+    }
+    .test-intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .test-intro p { font-size: 0.97rem; color: var(--muted); }
+
+    /* ── REVIEW CARDS ── */
+    .test-outer {
+      background: var(--white);
+      padding: 0 5% 3rem;
+    }
+
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 1100px;
+      margin: 0 auto 2rem;
+    }
+
+    .test-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--white);
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .test-card .stars { color: var(--red); font-size: 1.05rem; letter-spacing: 2px; }
+    .test-card blockquote { font-size: 0.88rem; color: var(--text); line-height: 1.7; margin: 0; }
+    .test-card cite { font-size: 0.85rem; color: var(--muted); font-style: normal; font-weight: 500; margin-top: auto; }
+
+    /* ── TRUST BANNER ── */
+    .trust-banner {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: var(--red-bg);
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+    }
+    .trust-banner svg { width: 52px; height: 52px; fill: var(--red); flex-shrink: 0; }
+    .trust-banner h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .trust-banner p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── ADD A COMMENT ── */
+    .comment-section {
+      background: var(--bg);
+      padding: 3rem 5%;
+    }
+    .comment-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .comment-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      margin-bottom: 0.4rem;
+    }
+    .comment-inner > p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .comment-form {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-field label { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+    .form-field input,
+    .form-field textarea {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      font-size: 0.9rem;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-field input:focus,
+    .form-field textarea:focus { outline: none; border-color: var(--red); }
+    .form-field textarea { resize: vertical; min-height: 110px; }
+
+    /* Star rating */
+    .star-row { display: flex; flex-direction: column; gap: 0.4rem; }
+    .star-row label { font-size: 0.88rem; font-weight: 600; }
+    .star-picker { display: flex; gap: 0.3rem; }
+    .star-picker button {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: #ddd;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+      transition: color 0.15s;
+    }
+    .star-picker button.active { color: var(--red); }
+
+    .form-submit-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .submit-msg {
+      font-size: 0.88rem;
+      color: var(--red);
+      font-weight: 600;
+      display: none;
+    }
+    .submit-msg.show { display: block; }
+
+    /* Saved comments list */
+    .saved-comments { display: flex; flex-direction: column; gap: 1rem; }
+    .saved-comment-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .saved-comment-card .sc-stars { color: var(--red); font-size: 1rem; letter-spacing: 2px; }
+    .saved-comment-card .sc-name { font-size: 0.88rem; font-weight: 700; }
+    .saved-comment-card .sc-text { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+    .saved-comment-card .sc-date { font-size: 0.78rem; color: #aaa; }
+
+    .no-comments {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 1.5rem;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      background: var(--white);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 780px) {
+      .test-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .test-intro { padding: 2.5rem 4% 2rem; }
+      .test-outer { padding: 0 4% 3rem; }
+      .trust-banner { padding: 1.5rem; gap: 1rem; }
+      .comment-section { padding: 2.5rem 4%; }
+    }
+  </style>
 </head>
 <body>
 
@@ -46,27 +239,31 @@
   </header>
 
   <main>
-    <div class="page-intro" style="text-align:center;">
+
+    <!-- PAGE TITLE -->
+    <div class="test-intro">
       <h2>What Our Customers Say</h2>
       <p>Real people. Real results.</p>
     </div>
 
-    <div class="testimonials-wrap">
-      <div class="testimonials-grid">
+    <div class="test-outer">
 
-        <div class="testimonial-card">
+      <!-- REVIEW CARDS -->
+      <div class="test-grid">
+
+        <div class="test-card">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <blockquote>"ParchD hibiscus drink is so refreshing! I feel lighter and my digestion has improved."</blockquote>
           <cite>&#8211; Botumelo, Gaborone</cite>
         </div>
 
-        <div class="testimonial-card">
+        <div class="test-card">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <blockquote>"The collagen yoghurt is my go-to! My skin is glowing and my gut feels amazing."</blockquote>
           <cite>&#8211; Kefilwemetse, Gaborone</cite>
         </div>
 
-        <div class="testimonial-card">
+        <div class="test-card">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <blockquote>"I love that ParchD uses natural ingredients and actually cares about our wellness."</blockquote>
           <cite>&#8211; Thato, Gaborone</cite>
@@ -74,34 +271,186 @@
 
       </div>
 
+      <!-- TRUST BANNER -->
       <div class="trust-banner">
-        <div class="trust-heart">&#9829;</div>
-        <div class="trust-text">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <div>
           <h3>Thank you for trusting ParchD</h3>
           <p>We are proud to be part of your wellness journey.</p>
         </div>
       </div>
+
     </div>
+
+    <!-- ADD A COMMENT -->
+    <section class="comment-section">
+      <div class="comment-inner">
+        <h2>Leave a Comment</h2>
+        <p>Share your experience with ParchD — your feedback means the world to us.</p>
+
+        <div class="comment-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="c-name">Your Name</label>
+              <input type="text" id="c-name" placeholder="e.g. Thabo, Gaborone" maxlength="60">
+            </div>
+            <div class="form-field">
+              <label for="c-product">Product</label>
+              <input type="text" id="c-product" placeholder="e.g. Hibiscus Drink" maxlength="60">
+            </div>
+          </div>
+
+          <div class="star-row">
+            <label>Rating</label>
+            <div class="star-picker" id="starPicker">
+              <button type="button" data-val="1" aria-label="1 star">&#9733;</button>
+              <button type="button" data-val="2" aria-label="2 stars">&#9733;</button>
+              <button type="button" data-val="3" aria-label="3 stars">&#9733;</button>
+              <button type="button" data-val="4" aria-label="4 stars">&#9733;</button>
+              <button type="button" data-val="5" aria-label="5 stars">&#9733;</button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="c-comment">Your Comment</label>
+            <textarea id="c-comment" placeholder="Tell us about your experience..."></textarea>
+          </div>
+
+          <div class="form-submit-row">
+            <button class="btn-primary" onclick="submitComment()">Submit Comment</button>
+            <span class="submit-msg" id="submitMsg">&#10003; Comment saved!</span>
+          </div>
+        </div>
+
+        <!-- Saved comments appear here -->
+        <div id="savedComments"></div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer>
     <div class="footer-inner">
       <div class="footer-socials">
-        <a href="https://www.facebook.com/share/1RYqaPEzoC/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-        <a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://wa.me/" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.522 5.837L.057 23.571l5.86-1.537A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 0 1-5.001-1.368l-.359-.214-3.72.976.993-3.624-.234-.372A9.78 9.78 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg></a>
+        <a href="https://www.facebook.com/share/1RYqaPEzoC/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://wa.me/" target="_blank" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.522 5.837L.057 23.571l5.86-1.537A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 0 1-5.001-1.368l-.359-.214-3.72.976.993-3.624-.234-.372A9.78 9.78 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        </a>
       </div>
       <nav class="footer-nav">
-        <a href="index.html">Home</a><a href="About.html">About Us</a><a href="Products.html">Products</a>
-        <a href="Shop.html">Shop</a><a href="Testimonials.html">Testimonials</a><a href="FAQ.html">FAQ</a><a href="Contact.html">Contact Us</a>
+        <a href="index.html">Home</a>
+        <a href="About.html">About Us</a>
+        <a href="Products.html">Products</a>
+        <a href="Shop.html">Shop</a>
+        <a href="Testimonials.html">Testimonials</a>
+        <a href="FAQ.html">FAQ</a>
+        <a href="Contact.html">Contact Us</a>
       </nav>
       <p class="footer-copy">&copy; 2026 ParchD. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
+    /* ── NAV ── */
     function openMenu() { document.getElementById('mobileNav').classList.add('open'); }
     function closeMenu() { document.getElementById('mobileNav').classList.remove('open'); }
+
+    /* ── STAR PICKER ── */
+    let selectedRating = 0;
+    const stars = document.querySelectorAll('#starPicker button');
+
+    stars.forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedRating = parseInt(btn.dataset.val);
+        updateStars(selectedRating);
+      });
+      btn.addEventListener('mouseenter', () => updateStars(parseInt(btn.dataset.val)));
+      btn.addEventListener('mouseleave', () => updateStars(selectedRating));
+    });
+
+    function updateStars(val) {
+      stars.forEach(b => {
+        b.classList.toggle('active', parseInt(b.dataset.val) <= val);
+      });
+    }
+
+    /* ── SUBMIT COMMENT ── */
+    function submitComment() {
+      const name    = document.getElementById('c-name').value.trim();
+      const product = document.getElementById('c-product').value.trim();
+      const comment = document.getElementById('c-comment').value.trim();
+
+      if (!name || !comment || selectedRating === 0) {
+        alert('Please fill in your name, a rating, and a comment before submitting.');
+        return;
+      }
+
+      const entry = {
+        name,
+        product,
+        rating: selectedRating,
+        comment,
+        date: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+      };
+
+      // Save to localStorage
+      const existing = JSON.parse(localStorage.getItem('parchd_comments') || '[]');
+      existing.unshift(entry); // newest first
+      localStorage.setItem('parchd_comments', JSON.stringify(existing));
+
+      // Reset form
+      document.getElementById('c-name').value = '';
+      document.getElementById('c-product').value = '';
+      document.getElementById('c-comment').value = '';
+      selectedRating = 0;
+      updateStars(0);
+
+      // Show success message
+      const msg = document.getElementById('submitMsg');
+      msg.classList.add('show');
+      setTimeout(() => msg.classList.remove('show'), 3000);
+
+      // Re-render comments
+      renderComments();
+    }
+
+    /* ── RENDER SAVED COMMENTS ── */
+    function renderComments() {
+      const container = document.getElementById('savedComments');
+      const comments = JSON.parse(localStorage.getItem('parchd_comments') || '[]');
+
+      if (comments.length === 0) {
+        container.innerHTML = '<p class="no-comments">No comments yet — be the first to share your experience!</p>';
+        return;
+      }
+
+      const html = comments.map(c => `
+        <div class="saved-comment-card">
+          <div class="sc-stars">${'★'.repeat(c.rating)}${'☆'.repeat(5 - c.rating)}</div>
+          <div class="sc-name">${escapeHTML(c.name)}${c.product ? ' &mdash; <span style="font-weight:400;color:var(--muted)">' + escapeHTML(c.product) + '</span>' : ''}</div>
+          <div class="sc-text">"${escapeHTML(c.comment)}"</div>
+          <div class="sc-date">${c.date}</div>
+        </div>
+      `).join('');
+
+      container.innerHTML = '<div class="saved-comments">' + html + '</div>';
+    }
+
+    function escapeHTML(str) {
+      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    // Load existing comments on page load
+    renderComments();
   </script>
+
 </body>
 </html>
