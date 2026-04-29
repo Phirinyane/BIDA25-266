@@ -4,123 +4,146 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ParchD | Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>ParchD</h1>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" onclick="closeMenu()">&times;</button>
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="About.html" onclick="closeMenu()">About Us</a>
+    <a href="Products.html" onclick="closeMenu()">Products</a>
+    <a href="Shop.html" onclick="closeMenu()">Shop</a>
+    <a href="Testimonials.html" onclick="closeMenu()">Testimonials</a>
+    <a href="FAQ.html" onclick="closeMenu()">FAQ</a>
+    <a href="Contact.html" onclick="closeMenu()">Contact Us</a>
+  </div>
 
+  <header>
+    <a href="index.html" class="logo">ParchD</a>
     <nav>
       <a href="index.html">Home</a>
       <a href="About.html">About Us</a>
-      <a href="Products.html">Products</a>
+      <a href="Products.html" class="active">Products</a>
       <a href="Shop.html">Shop</a>
       <a href="Testimonials.html">Testimonials</a>
       <a href="FAQ.html">FAQ</a>
       <a href="Contact.html">Contact Us</a>
     </nav>
-
-    <p>Cart</p>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div class="cart-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </div>
+      <button class="hamburger" onclick="openMenu()"><span></span><span></span><span></span></button>
+    </div>
   </header>
 
   <main>
-    <section>
+    <div class="page-intro">
       <h2>Our Products</h2>
-      <p>
-        Thoughtfully crafted wellness products to support your gut, boost your
-        wellness and bring out your natural glow.
-      </p>
-    </section>
+      <p>Thoughtfully crafted wellness products to support your gut, boost your wellness and bring out your natural glow.</p>
+    </div>
 
-    <section>
-      <h3>Hibiscus Drinks</h3>
+    <div class="products-page-wrap">
 
-      <figure>
-        <img src="placeholder-hibiscus-product.jpg" alt="Placeholder image for hibiscus drink">
-        <figcaption>Hibiscus Drinks</figcaption>
-      </figure>
+      <!-- Hibiscus Drinks -->
+      <div class="product-section-block">
+        <h3>Hibiscus Drinks</h3>
+        <div class="prod-image">
+          <img src="placeholder-hibiscus-product.jpg" alt="Hibiscus Drinks" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-box" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            PLACEHOLDER IMAGE
+          </div>
+        </div>
+        <div class="prod-details">
+          <h4>Description</h4>
+          <p>Our fermented hibiscus drink is refreshing, lightly tangy and packed with natural probiotics to support your gut health.</p>
+          <h4>Key Ingredients</h4>
+          <p>Hibiscus, Water, Natural Sweetener, Ginger, Lemon, Probiotics.</p>
+          <h4>Benefits</h4>
+          <ul class="prod-benefits">
+            <li><span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Supports healthy digestion</li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Rich in antioxidants</li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Boosts immunity</li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Refreshing and revitalizing</li>
+          </ul>
+        </div>
+      </div>
 
-      <article>
-        <h4>Description</h4>
-        <p>
-          Our fermented hibiscus drink is refreshing, lightly tangy and packed
-          with natural probiotics to support your gut health.
-        </p>
+      <!-- Collagen Yoghurts -->
+      <div class="product-section-block">
+        <h3>Collagen-Infused Yoghurts</h3>
+        <div class="prod-image">
+          <img src="placeholder-yoghurt-product.jpg" alt="Collagen Yoghurts" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-box" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            PLACEHOLDER IMAGE
+          </div>
+        </div>
+        <div class="prod-details">
+          <h4>Description</h4>
+          <p>Creamy, delicious yoghurt infused with collagen to support healthy skin, hair and joints while improving gut health.</p>
+          <h4>Key Ingredients</h4>
+          <p>Milk, Collagen, Live Cultures, Natural Flavour.</p>
+          <h4>Benefits</h4>
+          <ul class="prod-benefits">
+            <li><span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Supports gut health</li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Promotes healthy, glowing skin</li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Strengthens hair and nails</li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Rich in protein and nutrients</li>
+          </ul>
+        </div>
+      </div>
 
-        <h4>Key Ingredients</h4>
-        <p>Hibiscus, water, natural sweetener, ginger, lemon and probiotics.</p>
+      <!-- Footer Strip -->
+      <div class="products-footer-strip">
+        <div class="strip-item">
+          <div class="strip-icon"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><path d="M12 8v4M10 10l2 2 2-2"/></svg></div>
+          <div><h4>Natural Ingredients</h4><p>Carefully selected and wholesome.</p></div>
+        </div>
+        <div class="strip-item">
+          <div class="strip-icon"><svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg></div>
+          <div><h4>Probiotic Goodness</h4><p>Supports a healthy gut and overall wellness.</p></div>
+        </div>
+        <div class="strip-item">
+          <div class="strip-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div><h4>Made with Care</h4><p>Crafted in small batches for the best quality.</p></div>
+        </div>
+        <div class="strip-item">
+          <div class="strip-icon"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11V5l8-3 8 3v6c0 6.5-8 11-8 11z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+          <div><h4>Quality You Can Trust</h4><p>Safe, reliable and made for your well-being.</p></div>
+        </div>
+      </div>
 
-        <h4>Benefits</h4>
-        <ul>
-          <li>Supports healthy digestion</li>
-          <li>Rich in antioxidants</li>
-          <li>Boosts immunity</li>
-          <li>Refreshing and revitalizing</li>
-        </ul>
-      </article>
-    </section>
-
-    <section>
-      <h3>Collagen-Infused Yoghurts</h3>
-
-      <figure>
-        <img src="placeholder-yoghurt-product.jpg" alt="Placeholder image for collagen yoghurt">
-        <figcaption>Collagen-Infused Yoghurts</figcaption>
-      </figure>
-
-      <article>
-        <h4>Description</h4>
-        <p>
-          Creamy, delicious yoghurt infused with collagen to support healthy skin,
-          hair and joints while improving gut health.
-        </p>
-
-        <h4>Key Ingredients</h4>
-        <p>Milk, collagen, live cultures and natural flavour.</p>
-
-        <h4>Benefits</h4>
-        <ul>
-          <li>Supports gut health</li>
-          <li>Promotes healthy, glowing skin</li>
-          <li>Strengthens hair and nails</li>
-          <li>Rich in protein and nutrients</li>
-        </ul>
-      </article>
-    </section>
-
-    <section>
-      <article>
-        <h3>Natural Ingredients</h3>
-        <p>Carefully selected and wholesome.</p>
-      </article>
-
-      <article>
-        <h3>Probiotic Goodness</h3>
-        <p>Supports a healthy gut and overall wellness.</p>
-      </article>
-
-      <article>
-        <h3>Made with Care</h3>
-        <p>Crafted in small batches for the best quality.</p>
-      </article>
-
-      <article>
-        <h3>Quality You Can Trust</h3>
-        <p>Safe, reliable and made for your well-being.</p>
-      </article>
-    </section>
+    </div>
   </main>
 
   <footer>
-    <p>
-      <a href="https://www.facebook.com/share/1RYqaPEzoC/?mibextid=wwXIfr">Facebook</a>
-      <a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==">Instagram</a>
-      <a href="https://wa.me/">WhatsApp</a>
-    </p>
-
-
-    <p>&copy; 2026 ParchD. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/1RYqaPEzoC/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/parchd_bw?igsh=MWkwdnk4OG5qeWJ5MQ==" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://wa.me/" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.11 1.522 5.837L.057 23.571l5.86-1.537A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 0 1-5.001-1.368l-.359-.214-3.72.976.993-3.624-.234-.372A9.78 9.78 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg></a>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a><a href="About.html">About Us</a><a href="Products.html">Products</a>
+        <a href="Shop.html">Shop</a><a href="Testimonials.html">Testimonials</a><a href="FAQ.html">FAQ</a><a href="Contact.html">Contact Us</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 ParchD. All rights reserved.</p>
+    </div>
   </footer>
 
+  <script>
+    function openMenu() { document.getElementById('mobileNav').classList.add('open'); }
+    function closeMenu() { document.getElementById('mobileNav').classList.remove('open'); }
+  </script>
 </body>
 </html>
