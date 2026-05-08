@@ -41,26 +41,17 @@
           <path d="M16 10a4 4 0 0 1-8 0"/>
         </svg>
       </div>
-      <button class="hamburger" onclick="openMenu()"><span></span><span></span><span></span></button>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </header>
 
   <main>
     <!-- About Hero: title + story left, image right -->
-    <div class="about-hero">
-      <div class="about-story">
-        <h2>About Us</h2>
-        <h3>Our Story</h3>
-        <p>ParchD was created with a simple belief – that a healthy gut is the foundation of a glowing life.</p>
-        <p>We saw the need for delicious, natural and affordable products that support wellness, beauty and confidence from the inside out.</p>
-      </div>
-      <div class="about-img">
-        <img src="placeholder-about.jpg" alt="About ParchD" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="placeholder-box" style="display:none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          PLACEHOLDER IMAGE
-        </div>
-      </div>
+    <div class="about-intro">
+      <h2>About Us</h2>
+      <h3>Our Story</h3>
+      <p>ParchD was created with a simple belief – that a healthy gut is the foundation of a glowing life.</p>
+      <p>We saw the need for delicious, natural and affordable products that support wellness, beauty and confidence from the inside out.</p>
     </div>
 
     <!-- Mission + Goals -->
@@ -109,18 +100,10 @@
       </div>
     </div>
 
-    <!-- Why Wellness Matters -->
-    <div class="wellness-section">
+    <div class="wellness-solo">
       <div class="wellness-text">
         <h3>Why Wellness Matters</h3>
         <p>A healthy gut improves digestion, boosts immunity and supports glowing skin. At ParchD, we make wellness easy, delicious and part of your everyday life.</p>
-      </div>
-      <div class="wellness-img">
-        <img src="placeholder-wellness.jpg" alt="Wellness at ParchD" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="placeholder-box" style="display:none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          PLACEHOLDER IMAGE
-        </div>
       </div>
     </div>
   </main>
@@ -140,9 +123,19 @@
     </div>
   </footer>
 
+  <script src="cart.js"></script>
   <script>
-    function openMenu() { document.getElementById('mobileNav').classList.add('open'); }
-    function closeMenu() { document.getElementById('mobileNav').classList.remove('open'); }
+    function openMenu() {
+      document.getElementById('mobileNav').classList.add('open');
+      document.querySelector('.hamburger').classList.add('open');
+    }
+    function closeMenu() {
+      document.getElementById('mobileNav').classList.remove('open');
+      document.querySelector('.hamburger').classList.remove('open');
+    }
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      this.classList.contains('open') ? closeMenu() : openMenu();
+    });
   </script>
 </body>
 </html>
