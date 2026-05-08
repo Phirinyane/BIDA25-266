@@ -41,7 +41,7 @@
           <path d="M16 10a4 4 0 0 1-8 0"/>
         </svg>
       </div>
-      <button class="hamburger" onclick="openMenu()"><span></span><span></span><span></span></button>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </header>
 
@@ -56,7 +56,7 @@
       <!-- Hibiscus Drinks -->
       <div class="shop-product-block">
         <h3>Hibiscus Drinks</h3>
-        <div class="shop-img">
+        <div class="shop-img img-wrap">
           <img src="placeholder-shop-hibiscus.jpg" alt="Hibiscus Drink" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="placeholder-box" style="display:none;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -82,10 +82,11 @@
               <input type="number" id="hibiscus-qty" class="qty-input" value="1" min="1">
               <button class="qty-btn" onclick="changeQty('hibiscus-qty', 1)">&#43;</button>
             </div>
-            <button class="add-cart-btn">
+            <button class="add-cart-btn" onclick="handleAddHibiscus()">
               <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
               Add to Cart
             </button>
+            <p id="hibiscus-error" style="color:var(--red);font-size:0.82rem;min-height:1rem;"></p>
           </div>
         </div>
       </div>
@@ -93,7 +94,7 @@
       <!-- Collagen Yoghurts -->
       <div class="shop-product-block">
         <h3>Collagen Yoghurts</h3>
-        <div class="shop-img">
+        <div class="shop-img img-wrap">
           <img src="placeholder-shop-yoghurt.jpg" alt="Collagen Yoghurt" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="placeholder-box" style="display:none;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -125,10 +126,11 @@
               <input type="number" id="yoghurt-qty" class="qty-input" value="1" min="1">
               <button class="qty-btn" onclick="changeQty('yoghurt-qty', 1)">&#43;</button>
             </div>
-            <button class="add-cart-btn">
+            <button class="add-cart-btn" onclick="handleAddYoghurt()">
               <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
               Add to Cart
             </button>
+            <p id="yoghurt-error" style="color:var(--red);font-size:0.82rem;min-height:1rem;"></p>
           </div>
         </div>
       </div>
@@ -167,9 +169,59 @@
     </div>
   </footer>
 
+  <script src="cart.js"></script>
   <script>
-    function openMenu() { document.getElementById('mobileNav').classList.add('open'); }
-    function closeMenu() { document.getElementById('mobileNav').classList.remove('open'); }
+    function openMenu() {
+      document.getElementById('mobileNav').classList.add('open');
+      document.querySelector('.hamburger').classList.add('open');
+    }
+    function closeMenu() {
+      document.getElementById('mobileNav').classList.remove('open');
+      document.querySelector('.hamburger').classList.remove('open');
+    }
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      this.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    const hibiscusPrices = { small: 25, large: 35 };
+    const yoghurtPrices  = { small: 20, large: 50 };
+
+    function handleAddHibiscus() {
+      const sizeEl = document.querySelector('input[name="hibiscus-size"]:checked');
+      const qty    = parseInt(document.getElementById('hibiscus-qty').value) || 1;
+      const err    = document.getElementById('hibiscus-error');
+      if (!sizeEl) { err.textContent = 'Please select a size.'; return; }
+      err.textContent = '';
+      const sizeLabel = sizeEl.value === 'small' ? '330ml Small' : '500ml Large';
+      const price     = hibiscusPrices[sizeEl.value];
+      addToCart('Hibiscus Drink', sizeLabel, price, qty);
+    }
+
+    function handleAddYoghurt() {
+      const flavourEl = document.querySelector('input[name="yoghurt-flavour"]:checked');
+      const sizeEl    = document.querySelector('input[name="yoghurt-size"]:checked');
+      const qty       = parseInt(document.getElementById('yoghurt-qty').value) || 1;
+      const err       = document.getElementById('yoghurt-error');
+      if (!flavourEl || !sizeEl) { err.textContent = 'Please select a flavour and size.'; return; }
+      err.textContent = '';
+      const flavour   = flavourEl.value.charAt(0).toUpperCase() + flavourEl.value.slice(1);
+      const sizeLabel = sizeEl.value === 'small' ? '150g Single' : '500g Large';
+      const price     = yoghurtPrices[sizeEl.value];
+      addToCart('Collagen Yoghurt', flavour + ', ' + sizeLabel, price, qty);
+    }
+
+    // Dynamic price display on size selection
+    document.querySelectorAll('input[name="hibiscus-size"]').forEach(r => {
+      r.addEventListener('change', function() {
+        document.querySelectorAll('.hibiscus-price').forEach(el => el.style.fontWeight = '400');
+        this.closest('.radio-row').querySelector('.radio-price').style.fontWeight = '700';
+      });
+    });
+    document.querySelectorAll('input[name="yoghurt-size"]').forEach(r => {
+      r.addEventListener('change', function() {
+        this.closest('.radio-row').querySelector('.radio-price').style.fontWeight = '700';
+      });
+    });
     function changeQty(id, delta) {
       const input = document.getElementById(id);
       const newVal = Math.max(1, parseInt(input.value) + delta);
