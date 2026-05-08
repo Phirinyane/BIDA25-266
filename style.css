@@ -135,17 +135,30 @@ footer { background: var(--footer-bg); color: var(--white); padding: 2rem 5%; }
   border-radius: 12px;
   overflow: hidden;
   aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .img-wrap .placeholder-box {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 0.75rem; color: #aaa; font-size: 0.72rem; letter-spacing: 0.08em;
-  text-transform: uppercase; z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: #aaa;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 .img-wrap .placeholder-box svg { width: 52px; height: 52px; opacity: 0.35; }
 .img-wrap img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.3s;
@@ -213,14 +226,14 @@ footer { background: var(--footer-bg); color: var(--white); padding: 2rem 5%; }
 .why-card h3 { font-size: 0.95rem; font-weight: 700; }
 .why-card p { font-size: 0.85rem; color: var(--muted); max-width: 160px; }
 
-.about-hero {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 3rem; padding: 3.5rem 5% 2.5rem;
-  max-width: 1200px; margin: 0 auto; align-items: start;
+.about-intro {
+  padding: 3.5rem 5% 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.about-hero h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 1.5rem; }
-.about-story h3 { font-family: 'Playfair Display', serif; color: var(--red); font-size: 1.15rem; margin-bottom: 0.75rem; }
-.about-story p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.75rem; }
+.about-intro h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 1.5rem; }
+.about-intro h3 { font-family: 'Playfair Display', serif; color: var(--red); font-size: 1.15rem; margin-bottom: 0.75rem; }
+.about-intro p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.75rem; max-width: 640px; }
 
 .mission-goals {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -253,13 +266,13 @@ footer { background: var(--footer-bg); color: var(--white); padding: 2rem 5%; }
 .goal-item svg { width: 38px; height: 38px; stroke: var(--text); fill: none; stroke-width: 1.4; }
 .goal-item p { font-size: 0.82rem; font-weight: 600; color: var(--text); }
 
-.wellness-section {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 3rem; padding: 0 5% 3.5rem;
-  max-width: 1200px; margin: 0 auto; align-items: center;
+.wellness-solo {
+  padding: 0 5% 3.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .wellness-text {
-  border: 1px solid var(--border); border-radius: 12px; background: var(--white); padding: 2rem;
+  border: 1px solid var(--border); border-radius: 12px; background: var(--white); padding: 2rem; max-width: 640px;
 }
 .wellness-text h3 { font-family: 'Playfair Display', serif; color: var(--red); font-size: 1.1rem; margin-bottom: 0.75rem; }
 .wellness-text p { font-size: 0.93rem; color: var(--muted); line-height: 1.75; }
@@ -443,18 +456,34 @@ footer { background: var(--footer-bg); color: var(--white); padding: 2rem 5%; }
 .contact-location h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
 .contact-location p { font-size: 0.9rem; color: var(--muted); }
 
+
+.about-hero-text {
+  padding: 3.5rem 5% 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.about-hero-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 1.25rem; }
+.about-hero-text h3 { font-family: 'Playfair Display', serif; color: var(--red); font-size: 1.15rem; margin-bottom: 0.75rem; }
+.about-hero-text p { font-size: 0.97rem; color: var(--muted); line-height: 1.8; margin-bottom: 0.75rem; }
+
+.wellness-full {
+  padding: 0 5% 3.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.wellness-full h3 { font-family: 'Playfair Display', serif; color: var(--red); font-size: 1.15rem; margin-bottom: 0.75rem; }
+.wellness-full p { font-size: 0.97rem; color: var(--muted); line-height: 1.8; }
+
 @media (max-width: 960px) {
   nav { display: none; }
   .hamburger { display: flex; }
 
   .hero { grid-template-columns: 1fr; padding: 3rem 5%; gap: 2rem; width: 100%; }
-  .hero-image { aspect-ratio: unset; min-height: unset; height: auto; }
+  .hero-image { aspect-ratio: 4/3; }
   .products-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
 
-  .about-hero { grid-template-columns: 1fr; }
   .mission-goals { grid-template-columns: 1fr; }
-  .wellness-section { grid-template-columns: 1fr; }
 
   .product-section-block { grid-template-columns: 1fr; }
   .products-footer-strip { grid-template-columns: repeat(2, 1fr); }
