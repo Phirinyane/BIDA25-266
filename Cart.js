@@ -250,8 +250,14 @@ function patchCartIcon() {
 }
 
 // ── INIT ──
-document.addEventListener('DOMContentLoaded', function () {
+function init() {
   injectDrawer();
   patchCartIcon();
   renderCart();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
