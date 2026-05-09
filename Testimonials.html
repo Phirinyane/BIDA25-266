@@ -234,7 +234,7 @@
           <path d="M16 10a4 4 0 0 1-8 0"/>
         </svg>
       </div>
-      <button class="hamburger" onclick="openMenu()"><span></span><span></span><span></span></button>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </header>
 
@@ -358,10 +358,20 @@
     </div>
   </footer>
 
+  <script src="cart.js"></script>
   <script>
     /* ── NAV ── */
-    function openMenu() { document.getElementById('mobileNav').classList.add('open'); }
-    function closeMenu() { document.getElementById('mobileNav').classList.remove('open'); }
+    function openMenu() {
+      document.getElementById('mobileNav').classList.add('open');
+      document.querySelector('.hamburger').classList.add('open');
+    }
+    function closeMenu() {
+      document.getElementById('mobileNav').classList.remove('open');
+      document.querySelector('.hamburger').classList.remove('open');
+    }
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      this.classList.contains('open') ? closeMenu() : openMenu();
+    });
 
     /* ── STAR PICKER ── */
     let selectedRating = 0;
