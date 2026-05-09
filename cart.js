@@ -1,5 +1,4 @@
-const WHATSAPP_NUMBER = '26700000000'; // Replace with your number
-
+const WHATSAPP_NUMBER = '26777580751'; 
 let cart = JSON.parse(localStorage.getItem('parchd_cart') || '[]');
 
 function saveCart() {
